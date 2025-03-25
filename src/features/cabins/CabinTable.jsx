@@ -33,7 +33,7 @@ export default function CabinTable() {
   //eslint-disable-next-line
   const { isLoading, error, data: cabins } = useQuery({
     queryKey: ["cabins"],
-    queryFn: getCabins
+    queryFn: getCabins,
   });
 
   if (isLoading) return <Spinner />;
