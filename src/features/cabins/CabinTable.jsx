@@ -30,8 +30,7 @@ const TableHeader = styled.header`
 `;
 
 export default function CabinTable() {
-  //eslint-disable-next-line
-  const { isLoading, error, data: cabins } = useQuery({
+  const { isLoading, data: cabins } = useQuery({
     queryKey: ["cabins"],
     queryFn: getCabins,
   });
