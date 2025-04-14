@@ -3,10 +3,10 @@ import { getCurrentUser } from "../../services/apiAuth";
 
 
 export function useUser() {
-    const { isloading, data: user } = useQuery({
+    const { isLoading, data: user } = useQuery({
         queryKey: ["user"],
         queryFn: getCurrentUser,
     });
 
-    return { isloading, user, isAuthenticated: user?.role === "authenticated" };
+    return { isLoading, user, isAuthenticated: user?.role === "authenticated" };
 }
