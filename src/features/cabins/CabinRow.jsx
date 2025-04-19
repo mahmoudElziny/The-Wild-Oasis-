@@ -40,7 +40,7 @@ const Discount = styled.div`
 export default function CabinRow({ cabin }) {
 
   const { isDeleting, deleteCabin } = useDeleteCabin();
-  //eslint-disable-next-line
+
   const { isCreating, createCabin } = useCreateCabin();
 
   const { id: cabinId, name, maxCapacity, regularPrice, discount, description, image } = cabin;
@@ -72,7 +72,7 @@ export default function CabinRow({ cabin }) {
             <Menus.Toggle id={cabinId} />
 
             <Menus.List id={cabinId}>
-              <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate} >Duplicate</Menus.Button>
+              <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate} disabled={isCreating}>Duplicate</Menus.Button>
               <Modal.Open opens='edit'>
                 <Menus.Button icon={<HiPencil />} onClick={() => { }}>Edit</Menus.Button>
               </Modal.Open>
